@@ -1,4 +1,5 @@
-const express = require('express')
+import 'dotenv/config'
+import express from 'express'
 
 const PORT = process.env.PORT || 3000
 
@@ -8,6 +9,7 @@ app.get('/', (req, res) => {
   res.json({
     code: 200,
     data: process.env.GREETING_WORD,
+    status: 'ok',
   })
 })
 
