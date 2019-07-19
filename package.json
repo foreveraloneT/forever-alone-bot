@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon src/app.js --exec babel-node -e js",
     "clean": "rm -rf dist",
-    "build": "npm run clean && babel src --out-dir dist --copy-files",
+    "build": "npm run clean && babel src --out-dir dist --copy-files -s",
     "serve": "node dist/app.js",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
