@@ -1,13 +1,13 @@
 const express = require('express')
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 const app = express()
 
 app.get('/', (req, res) => {
   res.json({
     code: 200,
-    data: 'Forever Alone',
+    data: process.env.GREETING_WORD,
   })
 })
 

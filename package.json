@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "LINE bot for learning",
   "main": "app.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "start": "node app.js",
     "serve": "node app.js",
