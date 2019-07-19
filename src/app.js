@@ -16,14 +16,13 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/line/webhook', lineMiddleware, async (req, res) => {
-  try {
-    await Promise.all(req.body.events.map(handleMessage))
-    res.end()
-  } catch (error) {
-    console.error(err)
-    res.status(500).end()
-  }
+app.post('/line/webhook', lineMiddleware, (req, res) => {
+  Promise.all(req.body.events.map(handleMessage))
+    .then((result) => res.json(result))
+    .catch((error) => {
+      console.log(error)
+      res.end()
+    })
 })
 
 app.listen(PORT, () => {
